@@ -28,5 +28,5 @@ nyní je opět potřeba migrovat přidat změny do sql tabulky ze stavu před zm
 Vytvoření ADMINISTRATORA . --  py manage.py createsuperuser   -  tím vytvoříme admina  nyní je třeba administrátora naimportovat ADMINA
 1. from django.contrib import admin 2. naimportování modelu from .models import Post,Comment tímto registruji modely
 
-https://www.youtube.com/watch?v=_rka931pePE&t=561s konec čas 45:00
+
 
