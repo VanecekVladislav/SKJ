@@ -1,0 +1,32 @@
+Rady a tipy
+
+První je třeba začít v PYCHARM project který si pojmenujeme a virtual nechame virualvenv
+
+Další krok po spuštění projektu začneme založením první aplikace našeho projektu a to přes terminal a příkaz
+    >>py manage.py startapp nazevaplikace    --- nastavíme tak název aplikace a i se nám vytvoří složka v projektu která obsahuje vše potřebné pro zatím
+
+
+seting.py - najdeme DATABASE kde je název a databáze kterou používáme, default je sqlite3 necháme prozatím tak
+
+
+v dalším kroku provedeme migraci do databáze - py manage.py migrate
+
+
+Django využívá - ORM - objektově relační mapování - Tabulky jsou složeny se sloupců (atributů) a řádky reprezentují záznam ,
+Tabulky spojujeme s objekty python třída(Class) se mapuje na databázovou tabulku a každá instance se mapuje na jeden řádek (záznam)
+jak se toto realizuje Djangu řekneme jak si představujeme naší databázy pomocí objektů definice třídy , on vezme třídu a přede jí do SQL
+
+
+První soubor v aplikaci je models.py
+
+Vytváříme  Class - Třídy podle potřeby nyní jen pro POST a pro COMMENT
+
+Nyní je třeba dát djangu vedět co chece použít a to tak že v SETTING.PY přidat naší aplikaci do INSTALLED_APPS tedy  'weblog.apps.WeblogConfig' což odkazuje na APPS.PY
+
+nyní je opět potřeba migrovat přidat změny do sql tabulky ze stavu před změnou do stavu po změně a to py manage.py makemigrations weblog  poté mohu zkontrolovat py manage.py sqlmigrate weblog 0001 - číslo migrace
+
+Vytvoření ADMINISTRATORA . --  py manage.py createsuperuser   -  tím vytvoříme admina  nyní je třeba administrátora naimportovat ADMINA
+1. from django.contrib import admin 2. naimportování modelu from .models import Post,Comment tímto registruji modely
+
+https://www.youtube.com/watch?v=_rka931pePE&t=561s konec čas 45:00
+
